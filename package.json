@@ -1,0 +1,27 @@
+{
+  "name": "Coming Site Express",
+  "version": "1.0.0",
+  "description": "Generator of 'Comming soon' pages",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "template",
+    "coming",
+    "soon",
+    "generator"
+  ],
+  "author": "Anderson LM",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-css": "^3.4.20",
+    "file-system": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-handlebars": "^4.0.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-rename": "^1.2.2"
+  }
+}
