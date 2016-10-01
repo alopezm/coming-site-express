@@ -1,10 +1,12 @@
 {
-  "name": "Coming Site Express",
-  "version": "1.0.0",
+  "name": "coming-site-express",
   "description": "Generator of 'Comming soon' pages",
   "main": "app.js",
+  "version": "0.0.0-semantic-release",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "commit": "git-cz",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
     "template",
@@ -13,15 +15,25 @@
     "generator"
   ],
   "author": "Anderson LM",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "clean-css": "^3.4.20",
+    "commitizen": "^2.8.6",
+    "cz-conventional-changelog": "^1.2.0",
     "file-system": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-handlebars": "^4.0.0",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-rename": "^1.2.2"
+    "gulp-rename": "^1.2.2",
+    "semantic-release": "^4.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alopezm/coming-site-express.git"
+  },
+  "czConfig": {
+     "path": "node_modules/cz-conventional-changelog"
   }
 }
