@@ -16,21 +16,21 @@
   <body>
     <div class="container">
       <div class="texts">
-        <div class="coming_soon">
-          <p class="coming_soon-text">{{site/text}} </p>
-          <ul class="coming_soon-list">
+        <div class="coming-soon">
+          <p class="coming-soon--text">{{site/text}} </p>
+          <ul class="coming-soon--list">
           {{#each site/list}}
-            <li class="coming_soon-item">{{this}}</li>
+            <li class="coming-soon--item">{{this}}</li>
           {{/each}}
           </ul>
         </div>
         {{#if site/organizationName}}
-        <div class="organization_name">
+        <div class="organization-name">
           <p>{{site/organizationName}}</p>
         </div>
         {{/if}}
         {{#if site/pageStatus}}
-        <div class="page_status">
+        <div class="page-status">
           <p>{{site/pageStatus}}</p>
         </div>
         {{/if}}
