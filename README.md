@@ -9,7 +9,7 @@ Coming Site Express is a small utility to create sites that indicate the user th
 Example
 ----------
 ```
-cp src/examples/config.json config.json
+cp example/config.json config.json
 npm i
 gulp
 ```

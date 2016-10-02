@@ -1,26 +1,13 @@
 'use strict';
 
 const gulp = require('gulp');
-const handlebars = require('gulp-compile-handlebars');
-const rename = require('gulp-rename');
-const clean = require('gulp-clean');
-const htmlmin = require('gulp-htmlmin');
-const fs = require('fs');
+
+const task = (task, data) => () => require(`./gulp-tasks/${task}`)(gulp, data);
+
 const config = require('./config.json');
+config.template.lenguaje = config.template.lenguaje || 'en';
 
-gulp.task('clean', () => gulp.src('dist', {read: false}).pipe(clean()) );
-
-gulp.task('build', ['clean'], () => {
-    const styles = fs.readFileSync("src/style.css", "utf8");
-
-    config.handlebars.lenguaje = config.handlebars.lenguaje || 'en';
-    config.handlebars.styles = config.handlebars.styles || styles;
-
-    return gulp.src('src/templates/index.hbs')
-        .pipe(handlebars(config.handlebars))
-        .pipe(htmlmin({collapseWhitespace: true, minifyCSS: true}))
-        .pipe(rename('index.html'))
-        .pipe(gulp.dest('dist'));
-});
-
+gulp.task('clean', task('clean'));
+gulp.task('sass', task('sass', ['clean']));
+gulp.task('build', ['sass'], task('build', config.template));
 gulp.task('default', ['build']);
