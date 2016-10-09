@@ -1,0 +1,25 @@
+{
+  "template": {
+    "font": "Josefin Sans",
+    "metadata": {
+      "lenguaje": "en",
+      "title": "Example Site",
+      "author": "Jhon Doe",
+      "description": "Description of your future awsome site.",
+      "keywords": "Site,Awesome,Coming Soon,Future"
+    },
+    "site": {
+      "list": [
+        "We Are Close",
+        "Lorem Ipsum",
+        "Coming Soon",
+        "Wait For It",
+        "..."
+      ],
+      "text": "Some Text",
+      "organizationName": "Company",
+      "pageStatus": "Just Wait For It"
+    },
+    "url": "http://example.com/index.html"
+  }
+}
