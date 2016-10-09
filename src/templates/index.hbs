@@ -4,37 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <title>{{metadata/title}}</title>
-    {{#if metadata/description}}<meta name="description" content="{{description}}">{{/if}}
-    {{#if metadata/author}}<meta name="author" content="{{author}}">{{/if}}
-    {{#if metadata/keywords}}<meta name="keywords" content="{{keywords}}">{{/if}}
+    {{#if metadata/description}}<meta name="description" content="{{metadata/description}}">{{/if}}
+    {{#if metadata/author}}<meta name="author" content="{{metadata/author}}">{{/if}}
+    {{#if metadata/keywords}}<meta name="keywords" content="{{metadata/keywords}}">{{/if}}
     <style>
       {{styles}}
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="texts">
-        <div class="coming-soon">
-          <p class="coming-soon--text">{{site/text}} </p>
-          <ul class="coming-soon--list">
-          {{#each site/list}}
-            <li class="coming-soon--item">{{this}}</li>
-          {{/each}}
-          </ul>
-        </div>
-        {{#if site/organizationName}}
-        <div class="organization-name">
-          <p>{{site/organizationName}}</p>
-        </div>
-        {{/if}}
-        {{#if site/pageStatus}}
-        <div class="page-status">
-          <p>{{site/pageStatus}}</p>
-        </div>
-        {{/if}}
-      </div>
-    </div>
+    {{>slideData}}
+    {{>webFontLoader}}
   </body>
 </html>
