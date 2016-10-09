@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="texts">
+    <div class="coming-soon">
+      <p class="coming-soon--text">{{site/text}} </p>
+      <ul class="coming-soon--list">
+      {{#each site/list}}
+        <li class="coming-soon--item">{{this}}</li>
+      {{/each}}
+      </ul>
+    </div>
+    {{#if site/organizationName}}
+    <div class="organization-name">
+      <p>{{site/organizationName}}</p>
+    </div>
+    {{/if}}
+    {{#if site/pageStatus}}
+    <div class="page-status">
+      <p>{{site/pageStatus}}</p>
+    </div>
+    {{/if}}
+  </div>
+</div>

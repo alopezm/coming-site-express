@@ -6,7 +6,8 @@
   "scripts": {
     "commit": "git-cz",
     "test": "echo \"No test specified\"`",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "generate": "gulp"
   },
   "keywords": [
     "template",

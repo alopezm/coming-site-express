@@ -17,7 +17,7 @@ npm i
 npm run generate
 ```
 
-Open in a browser **dist/index.html**
+Open in a browser **public/index.html**
 
 ## License
 
