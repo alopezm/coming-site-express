@@ -1,0 +1,99 @@
+$slide-items-amount: 5;
+$slide-items-time: 2;
+$relative-font-size: 2em;
+$font-size-base: 20px;
+$animations-pause-ratio: 6;
+$slide-animation-name: 'slide';
+
+$bg-color: #292f31;
+$font-color: #fff;
+
+@mixin get-animation-times($name, $pause-delta, $frames) {
+  $animation-ratio: (100 / ($frames)) - $pause-delta;
+  $quartile: $animation-ratio + $pause-delta;
+
+  @keyframes #{$name} {
+    @for $i from 0 through $slide-items-amount - 1 {
+      $quartile-start: $quartile * $i * 1%;
+      $quartile-end: (($quartile * $i) + $animation-ratio) * 1%;
+      $last-frame: '';
+
+      @if($i == $slide-items-amount - 1) {
+        $last-frame: '100%, ';
+      }
+
+      #{$last-frame $quartile-start, $quartile-end} {
+        transform: translateY(#{$i * -100%});
+      }
+    }
+  }
+
+}
+
+body {
+  background-color: $bg-color;
+  color: $font-color;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: #{$font-size-base};
+  text-align: center;
+}
+
+.container {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.texts {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.organization-name {
+  font-size: #{$relative-font-size * 2};
+}
+
+.coming-soon {
+  font-size: #{$relative-font-size};
+  height: #{$relative-font-size};
+
+  &--text {
+    display: inline;
+    margin: 0;
+  }
+
+  &--item {
+    animation-direction: alternate;
+    animation-duration: #{$slide-items-amount * $slide-items-time}s;
+    animation-iteration-count: infinite;
+    animation-name: #{$slide-animation-name};
+    margin: 0;
+  }
+
+  &--list {
+    list-style-type: none;
+    margin: 0 0 0 15px;
+  }
+
+  &--text,
+  &--list {
+    display: inline-block;
+    overflow-y: hidden;
+  }
+
+  &--list,
+  &--item,
+  &--text {
+    font-size: #{$relative-font-size / 2};
+    height: #{$relative-font-size};
+    line-height: #{$relative-font-size};
+    padding: 0;
+    vertical-align: middle;
+  }
+}
+
+@include get-animation-times($slide-animation-name, $animations-pause-ratio, $slide-items-amount);
