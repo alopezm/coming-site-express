@@ -8,6 +8,6 @@ const config = require('./config.json');
 config.template.lenguaje = config.template.lenguaje || 'en';
 
 gulp.task('clean', task('clean'));
-gulp.task('sass', task('sass', ['clean']));
-gulp.task('build', ['sass'], task('build', config.template));
+gulp.task('sass', ['clean'], task('sass', config.template));
+gulp.task('build', ['clean', 'sass'], task('build', config.template));
 gulp.task('default', ['build']);
