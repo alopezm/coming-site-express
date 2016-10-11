@@ -16,9 +16,10 @@ These instructions will get you a copy of Coming Site Express up and running on 
 
 There aren't too many things to you need to set up to get Coming Site Express up and running.
 
-```
 All you need to set up is node.js and npm.
-If you're on ubuntu you should be able to do this with a simple run of
+On Ubuntu, first make sure you have build-essential installed:
+```
+sudo apt-get install build-essential
 sudo apt-get install nodejs
 ```
 
@@ -35,9 +36,13 @@ npm run generate
 Open in a browser **public/index.html**
 
 ## Running the tests
+
+We are using commitzen and semantic release to manage our commits and package publishing.
+So you will need to run the following to commit.
 ```
-TODO: Add an automated testing framework
+npm run commit
 ```
+Note: The git hooks are still not set up properly, they will be up and runnign soon.
 
 ## Contributing
 
